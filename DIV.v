@@ -2,13 +2,13 @@ module DIV ( rstn, clk, in, out );
 
 input clk;
 input rstn;
-input [27:0]in;
+input [13:0]in;
 
 output [13:0] out;
-//reg [14:0]out1,out2,out3;
+reg [14:0]out1,out2,out3;
 
 
-	assign out = {1'b0, in[27:15]};
+assign out = in;
 
 
 /*

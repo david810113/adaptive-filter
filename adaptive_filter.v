@@ -37,27 +37,28 @@ input [13:0] buffer_in_13;
 input [13:0] buffer_in_14;
 input [13:0] buffer_in_15;
 
-input [13:0] weight_in_0;
-input [13:0] weight_in_1;
-input [13:0] weight_in_2;
-input [13:0] weight_in_3;
-input [13:0] weight_in_4;
-input [13:0] weight_in_5;
-input [13:0] weight_in_6;
-input [13:0] weight_in_7;
-input [13:0] weight_in_8;
-input [13:0] weight_in_9;
-input [13:0] weight_in_10;
-input [13:0] weight_in_11;
-input [13:0] weight_in_12;
-input [13:0] weight_in_13;
-input [13:0] weight_in_14;
-input [13:0] weight_in_15;
+input [31:0] weight_in_0;
+input [31:0] weight_in_1;
+input [31:0] weight_in_2;
+input [31:0] weight_in_3;
+input [31:0] weight_in_4;
+input [31:0] weight_in_5;
+input [31:0] weight_in_6;
+input [31:0] weight_in_7;
+input [31:0] weight_in_8;
+input [31:0] weight_in_9;
+input [31:0] weight_in_10;
+input [31:0] weight_in_11;
+input [31:0] weight_in_12;
+input [31:0] weight_in_13;
+input [31:0] weight_in_14;
+input [31:0] weight_in_15;
 
 
 
-output reg [15:0] d, e;   
-reg [15:0] dreg;
+output reg [31:0] d, e;   
+parameter usize = 25;
+reg [31:0] dreg;
 reg [4:0]counter;
 always@(negedge clk or negedge rstn)
 begin
@@ -75,39 +76,39 @@ end
 always@(posedge clk or negedge rstn)
 begin
 if (rstn == 0)
-	dreg <= #2  14'd000;
+	dreg <= #2  32'd000;
 else if (adap_filter_state == 1'b0)
-	dreg <= #2  14'd000;
+	dreg <= #2  32'd000;
 else if (counter == 5'd0)
-	dreg <= #2  dreg + reff_0 * weight_in_0;
+	dreg <= #2  dreg + (reff_0 * weight_in_0 >> usize);
 else if (counter == 5'd1)
-	dreg <= #2  dreg + reff_1 * weight_in_1;
+	dreg <= #2  dreg + (reff_1 * weight_in_1 >> usize);
 else if (counter == 5'd2)
-	dreg <= #2  dreg + reff_2 * weight_in_2;
+	dreg <= #2  dreg + (reff_2 * weight_in_2 >> usize);
 else if (counter == 5'd3)
-	dreg <= #2  dreg + reff_3 * weight_in_3;
+	dreg <= #2  dreg + (reff_3 * weight_in_3 >> usize);
 else if (counter == 5'd4)
-	dreg <= #2  dreg + reff_4 * weight_in_4;
+	dreg <= #2  dreg + (reff_4 * weight_in_4 >> usize);
 else if (counter == 5'd5)
-	dreg <= #2  dreg + reff_5 * weight_in_5;
+	dreg <= #2  dreg + (reff_5 * weight_in_5 >> usize);
 else if (counter == 5'd6)
-	dreg <= #2  dreg + reff_6 * weight_in_6;
+	dreg <= #2  dreg + (reff_6 * weight_in_6 >> usize);
 else if (counter == 5'd7)
-	dreg <= #2  dreg + reff_7 * weight_in_7;
+	dreg <= #2  dreg + (reff_7 * weight_in_7 >> usize);
 else if (counter == 5'd8)
-	dreg <= #2  dreg + reff_8 * weight_in_8;
+	dreg <= #2  dreg + (reff_8 * weight_in_8 >> usize);
 else if (counter == 5'd9)
-	dreg <= #2  dreg + reff_9 * weight_in_9;
+	dreg <= #2  dreg + (reff_9 * weight_in_9 >> usize);
 else if (counter == 5'd10)
-	dreg <= #2  dreg + reff_10 * weight_in_10;
+	dreg <= #2  dreg + (reff_10 * weight_in_10 >> usize);
 else if (counter == 5'd11)
-	dreg <= #2  dreg + reff_11 * weight_in_11;
+	dreg <= #2  dreg + (reff_11 * weight_in_11 >> usize);
 else if (counter == 5'd12)
-	dreg <= #2  dreg + reff_12 * weight_in_12;
+	dreg <= #2  dreg + (reff_12 * weight_in_12 >> usize);
 else if (counter == 5'd13)
-	dreg <= #2  dreg + reff_13 * weight_in_13;
+	dreg <= #2  dreg + (reff_13 * weight_in_13 >> usize);
 else if (counter == 5'd14)
-	dreg <= #2  dreg + reff_14 * weight_in_14;
+	dreg <= #2  dreg + (reff_14 * weight_in_14 >> usize);
 
 else
 	dreg <= #2  dreg;
@@ -119,7 +120,7 @@ if(rstn==0)
 	d <= 16'd000;
 	
 else if (counter == 5'd15)
-	d <= #2  dreg + reff_15 * weight_in_15;
+	d <= #2  dreg + (reff_15 * weight_in_15 >> usize);
 else
 	d <= #2 d;
 end
