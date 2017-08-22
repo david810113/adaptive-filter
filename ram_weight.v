@@ -60,7 +60,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_0 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_0 <= #2 (weight_in_0 << usize)+ div_out_0;//not yet
+	weight_in_0 <= #2 weight_in_0 + div_out_0;//not yet
     else
         weight_in_0 <= #2  weight_in_0;
     end 
@@ -70,7 +70,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_1 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_1 <= #2 (weight_in_1 << usize)+ div_out_1;//not yet
+	weight_in_1 <= #2 weight_in_1 + div_out_1;//not yet
     else
         weight_in_1 <= #2  weight_in_1;
     end 
@@ -80,7 +80,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_2 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_2 <= #2 (weight_in_2 << usize)+ div_out_2;//not yet
+	weight_in_2 <= #2 weight_in_2 + div_out_2;//not yet
     else
         weight_in_2 <= #2  weight_in_2;
     end 
@@ -90,7 +90,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_3 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_3 <= #2 (weight_in_3 << usize)+ div_out_3;//not yet
+	weight_in_3 <= #2 weight_in_3 + div_out_3;//not yet
     else
         weight_in_3 <= #2  weight_in_3;
     end 
@@ -100,7 +100,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_4 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_4 <= #2 (weight_in_4 << usize) + div_out_4;//not yet
+	weight_in_4 <= #2 weight_in_4 + div_out_4;//not yet
     else
         weight_in_4 <= #2  weight_in_4;
     end 
@@ -110,7 +110,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_5 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_5 <= #2 (weight_in_5 << usize)+ div_out_5;//not yet
+	weight_in_5 <= #2 weight_in_5 + div_out_5;//not yet
     else
         weight_in_5 <= #2  weight_in_5;
     end 
@@ -120,7 +120,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_6 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_6 <= #2 (weight_in_6 << usize)+ div_out_6;//not yet
+	weight_in_6 <= #2 weight_in_6 + div_out_6;//not yet
     else
         weight_in_6 <= #2  weight_in_6;
     end 
@@ -130,7 +130,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_7 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_7 <= #2 (weight_in_7 << usize)+ div_out_7;//not yet
+	weight_in_7 <= #2 weight_in_7 + div_out_7;//not yet
     else
         weight_in_7 <= #2  weight_in_7;
     end 
@@ -140,7 +140,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_8 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_8 <= #2 (weight_in_8 << usize)+ div_out_8;//not yet
+	weight_in_8 <= #2 weight_in_8 + div_out_8;//not yet
     else
         weight_in_8 <= #2  weight_in_8;
     end 
@@ -150,7 +150,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_9 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_9 <= #2 (weight_in_9 << usize)+ div_out_9;//not yet
+	weight_in_9 <= #2 weight_in_9+ div_out_9;//not yet
     else
         weight_in_9 <= #2  weight_in_9;
     end 
@@ -160,7 +160,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_10 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_10 <= #2 (weight_in_10 << usize)+ div_out_10;//not yet
+	weight_in_10 <= #2 weight_in_10 + div_out_10;//not yet
     else
         weight_in_10 <= #2  weight_in_10;
     end 
@@ -170,7 +170,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_11 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_11 <= #2 (weight_in_11 << usize)+ div_out_11;//not yet
+	weight_in_11 <= #2 weight_in_11 + div_out_11;//not yet
     else
         weight_in_11 <= #2  weight_in_11;
     end 
@@ -180,7 +180,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_12 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_12 <= #2 (weight_in_12 << usize)+ div_out_12;//not yet
+	weight_in_12 <= #2 weight_in_12 + div_out_12;//not yet
     else
         weight_in_12 <= #2  weight_in_12;
     end 
@@ -190,7 +190,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_13 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_13 <= #2 (weight_in_13 << usize)+ div_out_13;//not yet
+	weight_in_13 <= #2 weight_in_13 + div_out_13;//not yet
     else
         weight_in_13 <= #2  weight_in_13;
     end 
@@ -200,7 +200,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_14 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_14 <= #2 (weight_in_14 << usize)+ div_out_14;//not yet
+	weight_in_14 <= #2 weight_in_14 + div_out_14;//not yet
     else
         weight_in_14 <= #2  weight_in_14;
     end 
@@ -210,7 +210,7 @@ parameter usize = 25;
     if (rstn == 0)
         weight_in_15 <= #2  14'd0;
     else if(weight_cal_state == 1'b1)
-	weight_in_15 <= #2 (weight_in_15 << usize)+ div_out_15;//not yet
+	weight_in_15 <= #2 weight_in_15 + div_out_15;//not yet
     else
         weight_in_15 <= #2  weight_in_15;
     end

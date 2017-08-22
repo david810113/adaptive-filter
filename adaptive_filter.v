@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module adaptive_filter(adap_filter_state, rstn, clk, reff_0, reff_1, reff_2, reff_3, reff_4, reff_5, reff_6, reff_7, reff_8, reff_9, reff_10, reff_11, reff_12, reff_13, reff_14, reff_15, buffer_in_0, buffer_in_1, buffer_in_2, buffer_in_3, buffer_in_4, buffer_in_5, buffer_in_6, buffer_in_7, buffer_in_8, buffer_in_9, buffer_in_10, buffer_in_11, buffer_in_12, buffer_in_13, buffer_in_14, buffer_in_15, weight_in_0, weight_in_1, weight_in_2, weight_in_3, weight_in_4, weight_in_5, weight_in_6, weight_in_7, weight_in_8, weight_in_9, weight_in_10, weight_in_11, weight_in_12, weight_in_13, weight_in_14, weight_in_15, d, e);
+module adaptive_filter(adap_filter_state, rstn, clk, reff_0, reff_1, reff_2, reff_3, reff_4, reff_5, reff_6, reff_7, reff_8, reff_9, reff_10, reff_11, reff_12, reff_13, reff_14, reff_15, buffer_in_0, buffer_in_1, buffer_in_2, buffer_in_3, buffer_in_4, buffer_in_5, buffer_in_6, buffer_in_7, buffer_in_8, buffer_in_9, buffer_in_10, buffer_in_11, buffer_in_12, buffer_in_13, buffer_in_14, buffer_in_15, buffer_in_16, weight_in_0, weight_in_1, weight_in_2, weight_in_3, weight_in_4, weight_in_5, weight_in_6, weight_in_7, weight_in_8, weight_in_9, weight_in_10, weight_in_11, weight_in_12, weight_in_13, weight_in_14, weight_in_15, d, e);
 input rstn, clk, adap_filter_state;
 //input [13:0] reff, buffer_in;
 
@@ -20,6 +20,7 @@ input [13:0] reff_13;
 input [13:0] reff_14;
 input [13:0] reff_15;
 
+
 input [13:0] buffer_in_0;
 input [13:0] buffer_in_1;
 input [13:0] buffer_in_2;
@@ -36,6 +37,7 @@ input [13:0] buffer_in_12;
 input [13:0] buffer_in_13;
 input [13:0] buffer_in_14;
 input [13:0] buffer_in_15;
+input [13:0] buffer_in_16;
 
 input [31:0] weight_in_0;
 input [31:0] weight_in_1;
@@ -129,9 +131,9 @@ begin
 if (rstn == 0)
 	e <= #2  14'd0;
 else if (adap_filter_state == 1'b1&&counter==5'd14&&d[15]==0)
-	e <= #2  buffer_in_15 - d;	
+	e <= #2  buffer_in_16 - d;	
 else if (adap_filter_state == 1'b1&&counter==5'd14&&d[15]==1)
-	e <= #2  buffer_in_15 + d;	
+	e <= #2  buffer_in_16 + d;	
 else
 	e <= #2  e;
 

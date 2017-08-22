@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module ram_data (shift_data_state, rstn, clk, in, head_flag, ram_tmp_0, ram_tmp_1, ram_tmp_2, ram_tmp_3, ram_tmp_4, ram_tmp_5, ram_tmp_6, ram_tmp_7, ram_tmp_8, ram_tmp_9, ram_tmp_10, ram_tmp_11, ram_tmp_12, ram_tmp_13, ram_tmp_14, ram_tmp_15);
+module ram_data (shift_data_state, rstn, clk, in, head_flag, ram_tmp_0, ram_tmp_1, ram_tmp_2, ram_tmp_3, ram_tmp_4, ram_tmp_5, ram_tmp_6, ram_tmp_7, ram_tmp_8, ram_tmp_9, ram_tmp_10, ram_tmp_11, ram_tmp_12, ram_tmp_13, ram_tmp_14, ram_tmp_15,ram_tmp_16);
 
 input rstn, clk, head_flag, shift_data_state;
 input [13:0] in;
@@ -20,7 +20,7 @@ output reg [13:0] ram_tmp_12;
 output reg [13:0] ram_tmp_13;
 output reg [13:0] ram_tmp_14;
 output reg [13:0] ram_tmp_15;
-
+output reg [13:0] ram_tmp_16;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 1'b0)
@@ -180,6 +180,16 @@ output reg [13:0] ram_tmp_15;
         ram_tmp_15 <= #2  ram_tmp_14;
     else
 	ram_tmp_15 <= #2  ram_tmp_15;
+    end
+	
+	always@(posedge clk or negedge rstn)
+    begin
+    if (rstn == 1'b0)
+        ram_tmp_16 <= #2  14'd0;
+    else if (shift_data_state == 1'b1)
+        ram_tmp_16 <= #2  ram_tmp_15;
+    else
+	ram_tmp_16 <= #2  ram_tmp_16;
     end
 
 

@@ -23,6 +23,7 @@ wire [13:0] buffer_2_in_12;
 wire [13:0] buffer_2_in_13;
 wire [13:0] buffer_2_in_14;
 wire [13:0] buffer_2_in_15;
+wire [13:0] buffer_2_in_16;
 
 wire [13:0] buffer_3_in_0;
 wire [13:0] buffer_3_in_1;
@@ -40,6 +41,7 @@ wire [13:0] buffer_3_in_12;
 wire [13:0] buffer_3_in_13;
 wire [13:0] buffer_3_in_14;
 wire [13:0] buffer_3_in_15;
+wire [13:0] buffer_3_in_16;
 
 wire [31:0] weight_2_in_0;
 wire [31:0] weight_2_in_1;
@@ -207,6 +209,7 @@ adaptive_filter adaptive_filter_2 (
 				.buffer_in_13(buffer_2_in_13),
 				.buffer_in_14(buffer_2_in_14),
 				.buffer_in_15(buffer_2_in_15),
+				.buffer_in_16(buffer_2_in_16),
 				.weight_in_0(weight_2_in_0),
 				.weight_in_1(weight_2_in_1),
 				.weight_in_2(weight_2_in_2),
@@ -264,6 +267,7 @@ adaptive_filter adaptive_filter_3 (
 				.buffer_in_13(buffer_3_in_13),
 				.buffer_in_14(buffer_3_in_14),
 				.buffer_in_15(buffer_3_in_15),
+				.buffer_in_16(buffer_3_in_16),
 				.weight_in_0(weight_3_in_0),
 				.weight_in_1(weight_3_in_1),
 				.weight_in_2(weight_3_in_2),
@@ -290,22 +294,22 @@ ram_weight ram_weight_2 (
 			.rstn(rstn),
 			.clk(clk),
 			.e(e_2),
-			.reff_0(reff_0),
-			.reff_1(reff_1),
-			.reff_2(reff_2),
-			.reff_3(reff_3),
-			.reff_4(reff_4),
-			.reff_5(reff_5),
-			.reff_6(reff_6),
-			.reff_7(reff_7),
-			.reff_8(reff_8),
-			.reff_9(reff_9),
-			.reff_10(reff_10),
-			.reff_11(reff_11),
-			.reff_12(reff_12),
-			.reff_13(reff_13),
-			.reff_14(reff_14),
-			.reff_15(reff_15),
+			.reff_0(buffer_2_in_1),
+			.reff_1(buffer_2_in_2),
+			.reff_2(buffer_2_in_3),
+			.reff_3(buffer_2_in_4),
+			.reff_4(buffer_2_in_5),
+			.reff_5(buffer_2_in_6),
+			.reff_6(buffer_2_in_7),
+			.reff_7(buffer_2_in_8),
+			.reff_8(buffer_2_in_9),
+			.reff_9(buffer_2_in_10),
+			.reff_10(buffer_2_in_11),
+			.reff_11(buffer_2_in_12),
+			.reff_12(buffer_2_in_13),
+			.reff_13(buffer_2_in_14),
+			.reff_14(buffer_2_in_15),
+			.reff_15(buffer_2_in_16),
 			.weight_in_0(weight_2_in_0),
 			.weight_in_1(weight_2_in_1),
 			.weight_in_2(weight_2_in_2),
@@ -328,22 +332,22 @@ ram_weight ram_weight_3 (
 			.rstn(rstn),
 			.clk(clk),
 			.e(e_3),
-			.reff_0(reff_0),
-			.reff_1(reff_1),
-			.reff_2(reff_2),
-			.reff_3(reff_3),
-			.reff_4(reff_4),
-			.reff_5(reff_5),
-			.reff_6(reff_6),
-			.reff_7(reff_7),
-			.reff_8(reff_8),
-			.reff_9(reff_9),
-			.reff_10(reff_10),
-			.reff_11(reff_11),
-			.reff_12(reff_12),
-			.reff_13(reff_13),
-			.reff_14(reff_14),
-			.reff_15(reff_15),
+			.reff_0(buffer_3_in_1),
+			.reff_1(buffer_3_in_2),
+			.reff_2(buffer_3_in_3),
+			.reff_3(buffer_3_in_4),
+			.reff_4(buffer_3_in_5),
+			.reff_5(buffer_3_in_6),
+			.reff_6(buffer_3_in_7),
+			.reff_7(buffer_3_in_8),
+			.reff_8(buffer_3_in_9),
+			.reff_9(buffer_3_in_10),
+			.reff_10(buffer_3_in_11),
+			.reff_11(buffer_3_in_12),
+			.reff_12(buffer_3_in_13),
+			.reff_13(buffer_3_in_14),
+			.reff_14(buffer_3_in_15),
+			.reff_15(buffer_3_in_16),
 			.weight_in_0(weight_3_in_0),
 			.weight_in_1(weight_3_in_1),
 			.weight_in_2(weight_3_in_2),
@@ -384,7 +388,8 @@ ram_data ram_data_2 (
 			.ram_tmp_12(buffer_2_in_12),
 			.ram_tmp_13(buffer_2_in_13),
 			.ram_tmp_14(buffer_2_in_14),
-			.ram_tmp_15(buffer_2_in_15)     
+			.ram_tmp_15(buffer_2_in_15),
+			.ram_tmp_16(buffer_2_in_16)  
 );   
 ram_data ram_data_3 (
 			.shift_data_state(shift_data_state),
@@ -407,7 +412,8 @@ ram_data ram_data_3 (
 			.ram_tmp_12(buffer_3_in_12),
 			.ram_tmp_13(buffer_3_in_13),
 			.ram_tmp_14(buffer_3_in_14),
-			.ram_tmp_15(buffer_3_in_15)      
+			.ram_tmp_15(buffer_3_in_15),
+			.ram_tmp_16(buffer_3_in_16)	
 );   
 
 ram_data ram_data_r (
