@@ -56,7 +56,22 @@ input [31:0] weight_in_13;
 input [31:0] weight_in_14;
 input [31:0] weight_in_15;
 
-
+wire [31:0] Shift_out_0;
+wire [31:0] Shift_out_1;
+wire [31:0] Shift_out_2;
+wire [31:0] Shift_out_3;
+wire [31:0] Shift_out_4;
+wire [31:0] Shift_out_5;
+wire [31:0] Shift_out_6;
+wire [31:0] Shift_out_7;
+wire [31:0] Shift_out_8;
+wire [31:0] Shift_out_9;
+wire [31:0] Shift_out_10;
+wire [31:0] Shift_out_11;
+wire [31:0] Shift_out_12;
+wire [31:0] Shift_out_13;
+wire [31:0] Shift_out_14;
+wire [31:0] Shift_out_15;
 
 output reg [31:0] d, e;   
 parameter usize = 25;
@@ -82,35 +97,35 @@ if (rstn == 0)
 else if (adap_filter_state == 1'b0)
 	dreg <= #2  32'd000;
 else if (counter == 5'd0)
-	dreg <= #2  dreg + (reff_0 * weight_in_0 >> usize);
+	dreg <= #2  dreg + Shift_out_0;
 else if (counter == 5'd1)
-	dreg <= #2  dreg + (reff_1 * weight_in_1 >> usize);
+	dreg <= #2  dreg + Shift_out_1;
 else if (counter == 5'd2)
-	dreg <= #2  dreg + (reff_2 * weight_in_2 >> usize);
+	dreg <= #2  dreg + Shift_out_2;
 else if (counter == 5'd3)
-	dreg <= #2  dreg + (reff_3 * weight_in_3 >> usize);
+	dreg <= #2  dreg + Shift_out_3;
 else if (counter == 5'd4)
-	dreg <= #2  dreg + (reff_4 * weight_in_4 >> usize);
+	dreg <= #2  dreg + Shift_out_4;
 else if (counter == 5'd5)
-	dreg <= #2  dreg + (reff_5 * weight_in_5 >> usize);
+	dreg <= #2  dreg + Shift_out_5;
 else if (counter == 5'd6)
-	dreg <= #2  dreg + (reff_6 * weight_in_6 >> usize);
+	dreg <= #2  dreg + Shift_out_6;
 else if (counter == 5'd7)
-	dreg <= #2  dreg + (reff_7 * weight_in_7 >> usize);
+	dreg <= #2  dreg + Shift_out_7;
 else if (counter == 5'd8)
-	dreg <= #2  dreg + (reff_8 * weight_in_8 >> usize);
+	dreg <= #2  dreg + Shift_out_8;
 else if (counter == 5'd9)
-	dreg <= #2  dreg + (reff_9 * weight_in_9 >> usize);
+	dreg <= #2  dreg + Shift_out_9;
 else if (counter == 5'd10)
-	dreg <= #2  dreg + (reff_10 * weight_in_10 >> usize);
+	dreg <= #2  dreg + Shift_out_10;
 else if (counter == 5'd11)
-	dreg <= #2  dreg + (reff_11 * weight_in_11 >> usize);
+	dreg <= #2  dreg + Shift_out_11;
 else if (counter == 5'd12)
-	dreg <= #2  dreg + (reff_12 * weight_in_12 >> usize);
+	dreg <= #2  dreg + Shift_out_12;
 else if (counter == 5'd13)
-	dreg <= #2  dreg + (reff_13 * weight_in_13 >> usize);
+	dreg <= #2  dreg + Shift_out_13;
 else if (counter == 5'd14)
-	dreg <= #2  dreg + (reff_14 * weight_in_14 >> usize);
+	dreg <= #2  dreg + Shift_out_14;
 
 else
 	dreg <= #2  dreg;
@@ -122,7 +137,7 @@ if(rstn==0)
 	d <= 16'd000;
 	
 else if (counter == 5'd15)
-	d <= #2  dreg + (reff_15 * weight_in_15 >> usize);
+	d <= #2  dreg + Shift_out_15;
 else
 	d <= #2 d;
 end
@@ -139,6 +154,23 @@ else
 
 end
 
+
+Shift Shift_0(.rstn(rstn), .clk(clk), .in(weight_in_0 * reff_0), .out(Shift_out_0));
+Shift Shift_1(.rstn(rstn), .clk(clk), .in(weight_in_1 * reff_1), .out(Shift_out_1));
+Shift Shift_2(.rstn(rstn), .clk(clk), .in(weight_in_2 * reff_2), .out(Shift_out_2));
+Shift Shift_3(.rstn(rstn), .clk(clk), .in(weight_in_3 * reff_3), .out(Shift_out_3));
+Shift Shift_4(.rstn(rstn), .clk(clk), .in(weight_in_4 * reff_4), .out(Shift_out_4));
+Shift Shift_5(.rstn(rstn), .clk(clk), .in(weight_in_5 * reff_5), .out(Shift_out_5));
+Shift Shift_6(.rstn(rstn), .clk(clk), .in(weight_in_6 * reff_6), .out(Shift_out_6));
+Shift Shift_7(.rstn(rstn), .clk(clk), .in(weight_in_7 * reff_7), .out(Shift_out_7));
+Shift Shift_8(.rstn(rstn), .clk(clk), .in(weight_in_8 * reff_8), .out(Shift_out_8));
+Shift Shift_9(.rstn(rstn), .clk(clk), .in(weight_in_9 * reff_9), .out(Shift_out_9));
+Shift Shift_10(.rstn(rstn), .clk(clk), .in(weight_in_10 * reff_10), .out(Shift_out_10));
+Shift Shift_11(.rstn(rstn), .clk(clk), .in(weight_in_11 * reff_11), .out(Shift_out_11));
+Shift Shift_12(.rstn(rstn), .clk(clk), .in(weight_in_12 * reff_12), .out(Shift_out_12));
+Shift Shift_13(.rstn(rstn), .clk(clk), .in(weight_in_13 * reff_13), .out(Shift_out_13));
+Shift Shift_14(.rstn(rstn), .clk(clk), .in(weight_in_14 * reff_14), .out(Shift_out_14));
+Shift Shift_15(.rstn(rstn), .clk(clk), .in(weight_in_15 * reff_15), .out(Shift_out_15));
 
 
     

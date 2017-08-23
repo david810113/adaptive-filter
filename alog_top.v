@@ -4,8 +4,8 @@ input rstn, clk, head_flag;
 input [13:0] buffer_2,buffer_3,reff;
 
 output reg [13:0] dout;
-wire [13:0]d_2, d_3;
-wire [13:0]e_2, e_3;
+wire [31:0]d_2, d_3;
+wire [31:0]e_2, e_3;
 
 wire [13:0] buffer_2_in_0;
 wire [13:0] buffer_2_in_1;
@@ -93,6 +93,7 @@ wire [13:0] reff_12;
 wire [13:0] reff_13;
 wire [13:0] reff_14;
 wire [13:0] reff_15;
+wire [13:0] reff_16;
 
 reg [4:0]counter, counter_pre;
 //wire adap_filter_state, weight_cal_state, shift_data_state, stop_state,stb_state, start_state;
@@ -437,7 +438,8 @@ ram_data ram_data_r (
 			.ram_tmp_12(reff_12),
 			.ram_tmp_13(reff_13),
 			.ram_tmp_14(reff_14),
-			.ram_tmp_15(reff_15)
+			.ram_tmp_15(reff_15),
+			.ram_tmp_16(reff_16)
      
 );   
 endmodule

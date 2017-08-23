@@ -2,9 +2,9 @@ module DIV ( rstn, clk, in, out );
 
 input clk;
 input rstn;
-input [13:0]in;
+input [32:0]in;
 
-output [13:0] out;
+output [32:0] out;
 reg [14:0]out1,out2,out3;
 
 
