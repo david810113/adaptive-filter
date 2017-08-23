@@ -3,7 +3,7 @@ module alog_top (rstn, clk,buffer_2,buffer_3,reff,head_flag,dout);
 input rstn, clk, head_flag;
 input [13:0] buffer_2,buffer_3,reff;
 
-output reg [13:0] dout;
+output reg [31:0] dout;
 wire [31:0]d_2, d_3;
 wire [31:0]e_2, e_3;
 
@@ -167,7 +167,7 @@ always@(*)
     always @(negedge clk or negedge rstn)
     begin
         if (rstn == 0)
-             dout <= #2  14'd0;
+             dout <= #2  32'd0;
         else
              dout <= #2  d_2 + d_3;
     end

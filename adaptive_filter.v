@@ -134,7 +134,7 @@ end
 always@(posedge clk or negedge rstn)
 begin
 if(rstn==0)
-	d <= 16'd000;
+	d <= 32'd000;
 	
 else if (counter == 5'd15)
 	d <= #2  dreg + Shift_out_15;
@@ -144,7 +144,7 @@ end
 always@(posedge clk or negedge rstn)
 begin
 if (rstn == 0)
-	e <= #2  14'd0;
+	e <= #2  32'd0;
 else if (adap_filter_state == 1'b1&&counter==5'd14&&d[15]==0)
 	e <= #2  buffer_in_16 - d;	
 else if (adap_filter_state == 1'b1&&counter==5'd14&&d[15]==1)

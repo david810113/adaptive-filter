@@ -58,7 +58,7 @@ output reg [31:0] weight_in_15;
  always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_0 <= #2  14'd0;
+        weight_in_0 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_0 <= #2 weight_in_0 +(e * reff_0);//not yet
     else
@@ -68,7 +68,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_1 <= #2  14'd0;
+        weight_in_1 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_1 <= #2 weight_in_1 + (e * reff_1);//not yet
     else
@@ -78,7 +78,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_2 <= #2  14'd0;
+        weight_in_2 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_2 <= #2 weight_in_2 + (e * reff_2);//not yet
     else
@@ -88,7 +88,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_3 <= #2  14'd0;
+        weight_in_3 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_3 <= #2 weight_in_3 + (e * reff_3);//not yet
     else
@@ -98,7 +98,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_4 <= #2  14'd0;
+        weight_in_4 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_4 <= #2 weight_in_4 + (e * reff_4);//not yet
     else
@@ -108,7 +108,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_5 <= #2  14'd0;
+        weight_in_5 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_5 <= #2 weight_in_5 + (e * reff_5);//not yet
     else
@@ -118,7 +118,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_6 <= #2  14'd0;
+        weight_in_6 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_6 <= #2 weight_in_6 + (e * reff_6);//not yet
     else
@@ -128,7 +128,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_7 <= #2  14'd0;
+        weight_in_7 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_7 <= #2 weight_in_7 + (e * reff_7);//not yet
     else
@@ -138,7 +138,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_8 <= #2  14'd0;
+        weight_in_8 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_8 <= #2 weight_in_8 + (e * reff_8);//not yet
     else
@@ -148,7 +148,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_9 <= #2  14'd0;
+        weight_in_9 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_9 <= #2 weight_in_9+ (e * reff_9);//not yet
     else
@@ -158,7 +158,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_10 <= #2  14'd0;
+        weight_in_10 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_10 <= #2 weight_in_10 + (e * reff_10);//not yet
     else
@@ -168,7 +168,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_11 <= #2  14'd0;
+        weight_in_11 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_11 <= #2 weight_in_11 + (e * reff_11);//not yet
     else
@@ -178,7 +178,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_12 <= #2  14'd0;
+        weight_in_12 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_12 <= #2 weight_in_12 + (e * reff_12);//not yet
     else
@@ -188,7 +188,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_13 <= #2  14'd0;
+        weight_in_13 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_13 <= #2 weight_in_13 + (e * reff_13);//not yet
     else
@@ -198,7 +198,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_14 <= #2  14'd0;
+        weight_in_14 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_14 <= #2 weight_in_14 + (e * reff_14);//not yet
     else
@@ -208,7 +208,7 @@ output reg [31:0] weight_in_15;
     always@(posedge clk or negedge rstn)
     begin
     if (rstn == 0)
-        weight_in_15 <= #2  14'd0;
+        weight_in_15 <= #2  32'd0;
     else if(weight_cal_state == 1'b1)
 	weight_in_15 <= #2 weight_in_15 + (e * reff_15);//not yet
     else
